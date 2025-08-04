@@ -1,0 +1,17 @@
+<nav class="navbar glass">
+    <div class="container">
+        <a class="navbar-brand" href="/tasks"><i class="fas fa-rocket"></i> TaskMaster</a>
+        <ul class="navbar-nav">
+            <% if (typeof user !== 'undefined' && user) { %>
+                <li><a class="nav-link" href="/tasks"><i class="fas fa-tasks"></i> Tasks</a></li>
+                <% if (user.role === 'admin') { %>
+                    <li><a class="nav-link" href="/categories"><i class="fas fa-tags"></i> Categories</a></li>
+                <% } %>
+                <li><a href="/logout" class="btn btn-sm btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            <% } else { %>
+                <li><a class="nav-link" href="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                <li><a class="nav-link" href="/register"><i class="fas fa-user-plus"></i> Register</a></li>
+            <% } %>
+        </ul>
+    </div>
+</nav>
